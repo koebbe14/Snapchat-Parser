@@ -167,8 +167,12 @@ The following conditions apply:
    requirements when using the software.
 
 By using this software, the user acknowledges that they have read, understood, and
-agreed to the above terms.________________________________________
-🧑‍💻 About the Developer
+agreed to the above terms.
+
+________________________________________
+## 🧑‍💻 About the Developer
+
 Patrick Koebbe
+
 Internet Crimes Against Children Investigator
 
