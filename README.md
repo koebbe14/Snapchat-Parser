@@ -2,7 +2,6 @@
 If you find my programs helpful or enjoy using them, feel free to buy me a coffee 😊
 
 
-
 ________________________________________
 # 📘 Snapchat Parser
 Version 1.0
@@ -10,6 +9,8 @@ Version 1.0
 Developer: Patrick Koebbe
 
 Contact: (koebbe14@gmail.com)
+
+## Download by clicking "Releases" to the right 
 ________________________________________
 ## 📖 Overview
 Snapchat Parser is a forensic analysis tool designed to process Snapchat Responsive Records (.zip file), automatically extract and parse all available conversations.csv and medial files (even inside nested ZIPs), and present the messages in a structured, filterable, taggable, and exportable interface.
