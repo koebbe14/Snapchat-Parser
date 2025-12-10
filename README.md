@@ -4,7 +4,7 @@ If you find my programs helpful or enjoy using them, feel free to buy me a coffe
 
 ________________________________________
 # 📘 Snapchat Parser
-Version 1.0
+Version 2.0
 
 Developer: Patrick Koebbe
 
