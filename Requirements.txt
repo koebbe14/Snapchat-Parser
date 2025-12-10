@@ -1,0 +1,7 @@
+beautifulsoup4
+opencv-python
+pandas
+pillow
+pillow-heif
+pyqt5
+requests
