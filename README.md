@@ -5,9 +5,6 @@
 **Developer:** Patrick Koebbe  
 **Contact:** koebbe14@gmail.com  
 
-[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/default-orange.png)](https://www.buymeacoffee.com/koebbe14)  
-If you find this tool helpful for your investigations or enjoy using it, feel free to buy me a coffee 😊.
-
 ---
 
 ## Overview
