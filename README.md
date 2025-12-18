@@ -23,7 +23,7 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
 
 ## Download and Installation
 
-1. **Download:** Visit the [Releases](https://github.com/your-repo/snapchat-parser/releases) section on the right to download the latest version (executable or source code).
+1. **Download:** Visit the [Releases] section on the right to download the latest version (executable or source code).
 2. **Prerequisites:** 
    - Windows OS (tested on Windows 10/11).
    - No additional installation required for the standalone executable.
