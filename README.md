@@ -1,6 +1,6 @@
 # Snapchat Parser
 
-**Version 2.0**
+**Version 2.1**
 
 **Developer:** Patrick Koebbe  
 **Contact:** koebbe14@gmail.com  
