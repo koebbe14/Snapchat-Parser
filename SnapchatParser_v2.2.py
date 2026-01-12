@@ -61,7 +61,7 @@ logger.setLevel(logging.DEBUG)
 
 
 
-APP_VERSION = "2.1"
+APP_VERSION = "2.2"
 
 
 BLUR_KERNEL_SIZE = (401, 401)
