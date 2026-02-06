@@ -1,6 +1,6 @@
 # Snapchat Parser
 
-**Version 2.2**
+**Version 2.3**
 
 **Developer:** Patrick Koebbe  
 **Contact:** koebbe14@gmail.com  
@@ -59,7 +59,11 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
   - HTML rendering in cells for rich content (e.g., clickable Snapchat profile links for user IDs).
   - Row coloring based on tags, sender alternation, or custom themes.
 - **Theme Support:**
-  - Dark mode toggle for reduced eye strain during extended reviews.  
+  - Dark mode toggle for reduced eye strain during extended reviews.
+  - Comprehensive color customization via Color Settings dialog (File → Color Settings).
+  - Customizable colors for backgrounds, text, borders, tags, senders, and more.
+  - Separate color schemes for light and dark modes.
+  - Color preferences saved and restored automatically.
 - **Search and Navigation Tools:**
   - Global search across all columns.
   - Keyboard shortcuts for navigation (e.g., arrow keys, page up/down).
@@ -71,14 +75,17 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
   - Live filter application with status indicators (e.g., "Filtered: X/Y messages").
   - One-click reset for all filters.
 - **Tagging System:**
-  - Predefined tags: CSAM (red), Evidence (orange), Of Interest (yellow), with customizable colors.
+  - Predefined tags: CSAM (red), Evidence (orange), Child Notable/Age Difficult (orange), Of Interest (yellow), with customizable colors.
   - Custom tags via user-defined labels and hotkeys.
   - Multi-select tagging via Ctrl/Shift-click.
   - Right-click context menu for quick tagging.
   - Persistent tagging stored per case (using conversation hashes for uniqueness).
+  - Tag priority system: CSAM (highest), Evidence, Child Notable/Age Difficult, Of Interest.
 - **Media Preview and Handling:**
   - Inline thumbnails (100x100px) for images and videos.
-  - Optional blurring: CSAM-only, all media, or none (configurable kernel size and sigma for Gaussian blur).
+  - Enhanced blur options: Blur CSAM-tagged media, Blur Child Notable/Age Difficult-tagged media, Blur All media, or Blur Media That's Currently Blurred (for re-exporting with existing blur states).
+  - Individual thumbnail blur control via right-click context menu.
+  - Global blur toggle for quick privacy protection.
   - Clickable thumbnails open full media in external viewers.
   - Support for multiple media per message.
   - Media type overlays (e.g., "VIDEO") on previews.
@@ -95,12 +102,13 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
   - Sorting by date, sender, or custom order.
 - **HTML Export Enhancements:**
   - Interactive table with client-side filtering, searching, sorting, and column resizing.
-  - Dark mode toggle in the report.
+  - Light/Dark mode selection during export (independent of application theme).
+  - Full color customization support: exported HTML respects all color settings (tags, senders, borders, text).
   - Embedded thumbnails with optional blurring.
   - Export summary section: Scope, format, fields, blur mode, totals (messages, conversations, users, tags, media), date period.
   - "All Notes" collapsible section for investigative annotations.
   - Media hashes table (`file_hashes.csv` embedded) for forensic verification.
-  - Legend for tag colors.  
+  - Legend for tag colors.
 - **CSV Export:**
   - Includes all selected fields with proper escaping for reactions and multi-line content.
 - **Copy Tools:**
@@ -110,6 +118,17 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
 - **Hotkey Customization:**
   - Configurable hotkeys for tagging, navigation, and actions (e.g., Ctrl+1 for CSAM tag).
   - Dialog for editing and saving hotkeys.
+- **Color Settings:**
+  - Comprehensive color customization dialog (File → Color Settings).
+  - Customize colors for backgrounds, text, borders, tags, senders, and more.
+  - Separate color schemes for light and dark modes.
+  - Reset options for individual categories or all colors.
+  - Color preview for real-time feedback.
+- **Custom Border Options:**
+  - Cell border feature for marking specific cells in the message table.
+  - Customizable border color via Color Settings dialog.
+  - Borders persist with saved progress and appear in exports.
+  - Useful for highlighting specific data points or evidence markers.
 - **Column Management:**
   - Reorder, hide, and resize columns with saved preferences.
   - Optimal default widths based on column type (e.g., wide for messages, narrow for dates).
