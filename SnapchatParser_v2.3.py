@@ -61,7 +61,7 @@ logger.setLevel(logging.DEBUG)
 
 
 
-APP_VERSION = "2.2"
+APP_VERSION = "2.3"
 GITHUB_OWNER = "Koebbe14"
 GITHUB_REPO = "Snapchat-Parser"
 GITHUB_LATEST_API = f"https://api.github.com/repos/{GITHUB_OWNER}/{GITHUB_REPO}/releases/latest"
@@ -2827,7 +2827,7 @@ class HelpDialog(QDialog):
         html += "<h3>About</h3>"
         html += "<table cellpadding='3' cellspacing='0'>"
         html += "<tr><td><b>Program:</b></td><td>Snapchat Parser</td></tr>"
-        html += "<tr><td><b>Version:</b></td><td>2.2</td></tr>"
+        html += "<tr><td><b>Version:</b></td><td>2.3</td></tr>"
         html += "<tr><td><b>Developer:</b></td><td>Patrick Koebbe</td></tr>"
         html += "</table>"
 
