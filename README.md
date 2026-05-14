@@ -1,6 +1,6 @@
 # Snapchat Parser
 
-**Version 2.4**
+**Version 2.5**
 
 **Developer:** Patrick Koebbe  
 **Contact:** koebbe14@gmail.com  
@@ -9,13 +9,14 @@
 
 ## Overview
 
-Snapchat Parser is a specialized tool designed for law enforcement and investigators to analyze Snapchat Responsive Records exports (in ZIP format). It automates the extraction, parsing, and visualization of conversation data from `conversations.csv` files and associated media (images, videos, and other files), even from nested ZIP structures. The tool provides an intuitive graphical user interface (GUI), enabling efficient review, tagging, filtering, and exporting of messages for criminal investigations, evidence triage, and reporting.
+Snapchat Parser is a specialized tool designed for law enforcement and investigators to analyze Snapchat Responsive Records exports (in ZIP format). It automates the extraction, parsing, and visualization of conversation data from `conversations.csv` files, **additional production-record CSVs** (IP data, subscriber info, AI conversations, device advertising IDs, account change history, and more), and associated media (images, videos, and other files), even from nested ZIP structures. The tool provides an intuitive graphical user interface (GUI), enabling efficient review, tagging, filtering, and exporting of messages and additional records for criminal investigations, evidence triage, and reporting.
 
 Key benefits include:
 - **Forensic Integrity:** Preserves original data sources, line numbers, and file hashes for chain-of-custody compliance.
 - **Efficiency:** Handles large datasets with virtual scrolling, optimized table rendering, and multi-threaded loading.
 - **Customization:** Configurable columns, hotkeys, themes, and export options tailored to investigative workflows.
 - **Privacy Features:** Optional blurring of media thumbnails for sensitive content reviews.
+- **Additional Records Support:** Inspect, tag, and export non-conversation production CSVs alongside conversation data.
 
 This tool is optimized for Internet Crimes Against Children (ICAC) investigations but is versatile for any Snapchat-related digital evidence analysis. It supports Windows environments and is packaged for easy deployment (e.g., via PyInstaller for standalone executables).
 
@@ -28,8 +29,8 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
    - Windows OS (tested on Windows 10/11).
    - No additional installation required for the standalone executable.
    - For source code installation (not necessary if using the .exe): Python 3.12+ with dependencies (PyQt5, Pillow, OpenCV, pandas, BeautifulSoup4, etc.). Install via `pip install -r requirements.txt` (create one based on imports if needed).
-3. **Setup:** Run the executable or execute `python SnapchatParer_v2.0.py` from the source directory.
-4. **Updates:** Check the Releases page for new versions. Version 2.0 introduces enhanced media handling, customizable hotkeys, and improved export interactivity.
+3. **Setup:** Run the executable or execute `python SnapchatParser_v2.5.py` from the source directory.
+4. **Updates:** Check the Releases page for new versions. Version 2.5 adds Additional Records support, improved HTML exports, and dialog usability enhancements.
 
 ---
 
@@ -41,6 +42,10 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
   - Automatically detects and extracts all `conversations.csv` files and media assets (images, videos, HEIC/HEIF via optional `pillow-heif` support).
   - On-demand media extraction to minimize resource usage.
   - Multi-threaded loading with progress dialogs and interruption support for large datasets.
+- **Additional Records Parsing:**
+  - Detects and parses non-conversation production CSVs (e.g., `ip_data.csv`, `subscriber.csv`, `push_token_history.csv`, `device_advertising_id.csv`, `community_ai_conversations.csv`, `account_change_history.csv`, and others).
+  - Displays records in a tree view grouped by archive folder and file, with per-section tables using native column headers.
+  - Supports tagging, exporting, and HTML rendering with the same tag-priority color system used for conversation messages.
 - **Data Normalization:**
   - Parses user IDs to usernames using built-in mappings.
   - Converts reaction codes to emojis (e.g., ❤️ for love, 😂 for laugh) with user attribution.
@@ -68,6 +73,15 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
   - Global search across all columns.
   - Keyboard shortcuts for navigation (e.g., arrow keys, page up/down).
   - Double-click to expand media or view details.
+
+### Additional Records
+- **Additional Records Dialog:** Access via the toolbar button to browse all non-conversation production CSVs. Records are organized in a tree view grouped by archive folder and source file, with per-section tables displaying native column headers.
+- **Tagging:** Tag individual rows in additional records using the same right-click context menu and hotkey system as conversation messages. Tags use the same color priority (CSAM > Evidence > Child Notable/Age Difficult > Of Interest).
+- **Export Options:**
+  - Export all additional records, only tagged additional records, or specific record types.
+  - HTML exports render each record type with its own table and column headers, grouped hierarchically, with a dropdown filter for quick navigation.
+  - CSV exports include clean headers (internal metadata columns excluded).
+- **Tags Dialog Integration:** The Tags dialog includes a dedicated "Additional Records" tab showing tagged rows grouped by record type, each with the correct columns and tag-colored backgrounds.
 
 ### Filtering and Analysis
 - **Advanced Filtering:**
@@ -109,6 +123,7 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
   - "All Notes" collapsible section for investigative annotations.
   - Media hashes table (`file_hashes.csv` embedded) for forensic verification.
   - Legend for tag colors.
+  - **Additional Records section:** Grouped by archive folder, file, and section with per-type tables, native column headers, tag-priority row coloring, and a dropdown filter for record types. Internal navigation links connect the conversations and additional records sections.
 - **CSV Export:**
   - Includes all selected fields with proper escaping for reactions and multi-line content.
 - **Copy Tools:**
@@ -163,10 +178,11 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
 3. **Select Conversation:** Use the dropdown to choose a conversation or view all.
 4. **Apply Filters:** Use the filter panel to narrow down messages (e.g., by date or tag).
 5. **Review and Tag:** Browse the table, right-click to tag, or use hotkeys. Add notes via the notes button.
-6. **Mark Reviewed:** Click "Mark As Reviewed" to track progress and auto-advance.
-7. **Export Data:** Go to File > Export, select format/options, and save.
-8. **Customize:** Access settings for, hotkeys, columns, and logging via menus.
-9. **Exit:** Close the window; temps are auto-cleaned.
+6. **Review Additional Records:** Click the **Additional Records** toolbar button to inspect non-conversation production CSVs (IP data, subscriber info, AI conversations, etc.). Tag rows of interest just like conversation messages.
+7. **Mark Reviewed:** Click "Mark As Reviewed" to track progress and auto-advance.
+8. **Export Data:** Go to File > Export, select format/options, and save. Choose to include all, tagged, or specific additional records alongside conversation messages.
+9. **Customize:** Access settings for hotkeys, columns, and logging via menus.
+10. **Exit:** Close the window; temps are auto-cleaned.
 
 **Tips:**
 - Use Ctrl+F for quick search.
@@ -188,7 +204,7 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
 - **Chain of Custody:** All messages link back to source CSV line numbers and files.
 - **Validation:** Exports include hashes for media integrity checks.
 - **Best Practices:** enable logging only when needed to avoid artifacts.
-- **Limitations:** Assumes standard Snapchat .csv structure
+- **Limitations:** Assumes standard Snapchat .csv structure for conversations and production records.
 
 ---
 
