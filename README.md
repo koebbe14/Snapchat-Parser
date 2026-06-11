@@ -1,9 +1,9 @@
 # Snapchat Parser
 
-**Version 2.5**
+**Version 2.7**
 
 **Developer:** Patrick Koebbe  
-**Contact:** koebbe14@gmail.com  
+**Contact:** Patrick.Koebbe@gmail.com  
 
 ---
 
@@ -128,6 +128,13 @@ This tool is optimized for Internet Crimes Against Children (ICAC) investigation
   - Includes all selected fields with proper escaping for reactions and multi-line content.
 - **Copy Tools:**
   - Right-click to copy selected rows (with headers) or individual cells to clipboard.
+ 
+### Media Browser
+- **Dedicated dialog window for viewing media thumbnails**
+  - Larger formatted thumbnails
+  - Tagging a thumbnail also tags the corresponding message
+  - Tag/Label color scheme applied to media thumbs
+  - Filter by media type
 
 ### Configuration and Utilities
 - **Hotkey Customization:**
